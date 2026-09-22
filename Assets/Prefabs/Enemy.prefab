@@ -173,3 +173,4 @@ MonoBehaviour:
   hp: 3
   hitCD: 1
   damage: 1
+  enemyDeathParticles: {fileID: 8776641405272187425, guid: 276bc3b55f0e8f94cbd131c70688b473, type: 3}

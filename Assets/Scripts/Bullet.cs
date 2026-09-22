@@ -7,6 +7,8 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float speed = 10f;
     [SerializeField] private float damage = 1f;
 
+    [SerializeField] private GameObject bulletDestroyParticles;
+
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -29,6 +31,12 @@ public class Bullet : MonoBehaviour
             enemy.Damage(damage);
         }
 
+        DestroyBullet();
+    }
+
+    private void DestroyBullet()
+    {
+        ParticlesManager.SpawnParticles(bulletDestroyParticles, transform.position, -transform.right);
         Destroy(gameObject);
     }
 

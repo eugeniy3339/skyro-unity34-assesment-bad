@@ -112,6 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
   speed: 10
   damage: 1
+  bulletDestroyParticles: {fileID: 6660877689786479156, guid: 7fee4ec8bc4ae514f84418ec61f541ab, type: 3}
 --- !u!1 &2059227324733941445
 GameObject:
   m_ObjectHideFlags: 0

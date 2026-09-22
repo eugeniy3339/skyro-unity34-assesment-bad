@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         curSpawnCooldown = spawnCooldown;
+        HudHandler.Instance.setScore(score);
     }
 
     void Update()

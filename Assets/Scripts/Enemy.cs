@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour
     private float curHitCD;
     [SerializeField] private float damage = 1f;
 
+    [SerializeField] private GameObject enemyDeathParticles;
+
     private bool isTouchingPlayer = false;
 
     public static event Action onEnemyDied;
@@ -72,6 +74,14 @@ public class Enemy : MonoBehaviour
     private void Die()
     {
         onEnemyDied?.Invoke();
+        SpawnDeathParticles();
         Destroy(gameObject);
+    }
+
+    private void SpawnDeathParticles()
+    {
+        if (enemyDeathParticles == null) return;
+
+        ParticlesManager.SpawnParticles(enemyDeathParticles, transform.position, Vector2.up);
     }
 }
